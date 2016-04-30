@@ -1,15 +1,11 @@
 import angular from 'angular';
-import 'angular-new-router';
 import 'angular-sanitize';
 import 'angular-material';
+import router from 'angular-ui-router';
 
-angular.module('octo', ['ngNewRouter', 'ngSanitize', 'ngMaterial'])
-  .controller('AppController', ['$router', AppController]);
 
-function AppController ($router) {
+import HomeModule from './components/home/home.js';
+import appRoutes from './app-routes.js';
 
-  $router.config([
-    {path: '/', component: 'home' }
-  ]);
-
-}
+angular.module('octo', [router, 'ngSanitize', 'ngMaterial', HomeModule])
+  .config(appRoutes);

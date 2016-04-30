@@ -14,13 +14,18 @@ module.exports = {
     }, {
       test: /\.js$/,
       exclude: /node_modules/,
-      loader: 'babel?presets[]=es2015'
+      loaders: ['ng-annotate', 'babel?presets[]=es2015']
       // query: {
       //   cacheDirectory: true
       // }
+    },
+    {
+      test: /\.html$/,
+      loader: 'ngtemplate?relativeTo=' + (path.resolve(__dirname, './app')) + '/!html'
     }
   ]},
   devServer: {
-    contentBase: path.resolve(__dirname, 'app'),
-  }
+    contentBase: path.resolve(__dirname, 'app')
+  },
+  devtool: 'eval'
 };
