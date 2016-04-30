@@ -1,0 +1,14 @@
+{
+  "name": "someproject",
+  "version": "1.0.0",
+  "description": "angular app",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma "
+  },
+  "author": "Josh Lipps",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.5"
+  }
+}
