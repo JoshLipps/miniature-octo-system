@@ -1,6 +1,6 @@
 import homeTemplate from './home.html';
 
-export default angular.module('octo.home', [])
+export default angular.module('app.components.home', [])
   .component('home', {
     templateUrl: homeTemplate,
     controller: HomeController
