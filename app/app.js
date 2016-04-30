@@ -1,6 +1,7 @@
 import angular from 'angular';
 import 'angular-sanitize';
 import 'angular-material';
+import 'angular-material/angular-material.min.css';
 import router from 'angular-ui-router';
 
 
