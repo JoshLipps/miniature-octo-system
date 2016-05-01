@@ -1,5 +1,6 @@
 /* global module, __dirname, require */
 var path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: path.resolve(__dirname, 'app', 'app.js'),
@@ -21,11 +22,14 @@ module.exports = {
     },
     {
       test: /\.html$/,
-      loader: 'ngtemplate?relativeTo=' + (path.resolve(__dirname, './app')) + '/!html'
+      loader: 'ngtemplate?relativeTo=' + (path.resolve(__dirname, 'app')) + '/!html',
+      exclude: path.resolve(__dirname, 'app', 'public', 'index.html')
     }
   ]},
-  devServer: {
-    contentBase: path.resolve(__dirname, 'app')
-  },
+  plugins: [new HtmlWebpackPlugin({
+    template: path.resolve(__dirname, 'app', 'public', 'index.html'),
+    hash: true
+  })],
+  devServer: {},
   devtool: 'eval'
 };
