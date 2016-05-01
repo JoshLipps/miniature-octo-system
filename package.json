@@ -7,8 +7,8 @@
   "scripts": {
     "build": "webpack --progress --colors -p",
     "watch": "webpack --progress --colors --watch -p",
-    "start": "webpack-dev-server --progress --colors --inline --hot",
-    "start:prod": "PUBLIC_PATH='./build' www",
+    "dev": "webpack-dev-server --progress --colors --inline --hot",
+    "start": "PUBLIC_PATH='./build' www",
     "test": "karma",
     "clean": "rm -rf node_modules"
   },
@@ -40,5 +40,8 @@
     "style-loader": "^0.13.1",
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1"
+  },
+  "engine": {
+    "node": "5.2.0"
   }
 }
